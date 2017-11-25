@@ -14,8 +14,7 @@ Make item with links clickable(only support http/https url).
 
 Like this.
 
-#+ATTR_HTML: :alt bitbar agenda plugin image :align center :width 500
-[[file:2017-11-25_bitbar-ext-org-agenda - scaled width 500.png][bitbar-agenda-image]]
+[[file:2017-11-25_bitbar-ext-org-agenda - scaled width 500.png]]
 
 *** usage
 User need to specify the command to export the agenda-view to txt file.
