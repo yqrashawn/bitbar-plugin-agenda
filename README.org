@@ -1,4 +1,5 @@
 [[https://github.com/matryer/bitbar][Bitbar]] is a macos application that can add custom menu bar buttons.
+
 I'm recently learning managing projects with org-mode. And we all know that
 org-agenda is great.
 
@@ -7,10 +8,10 @@ So I write a bitbar plugin, [[https://github.com/yqrashawn/bitbar-plugin-agenda]
 --------
 
 *** feature
-It can display your chosen org-agenda-custom-commands in menu bar.
-Support customize color for priority.
-Support different color for filter.
-Make item with links clickable(only support http/https url).
+- It can display your chosen org-agenda-custom-commands in menu bar.
+- Support customize color for priority.
+- Support different color for filter.
+- Make item with links clickable(only support http/https url).
 
 Like this.
 
