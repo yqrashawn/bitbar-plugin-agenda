@@ -16,7 +16,7 @@ Encoding.default_internal = Encoding::UTF_8
 
 # Change to your todo directory path
 agenda_directory = "#{Dir.home}/agendas/work/"
-tag_indicator = 'Headlines with TAGS match: '
+agenda_name = 'todos.txt'
 
 # Change priority color here
 tag_color = 'orange'
@@ -28,7 +28,9 @@ labels = {
   '[#C]' => 'violet'
 }
 
-# stdout close stderr close
+tag_indicator = 'Headlines with TAGS match: '
+
+# close stdout stderr
 system '/usr/local/bin/emacs',
        '--batch',
        '-l',
@@ -36,16 +38,16 @@ system '/usr/local/bin/emacs',
        '--eval',
        '(run-hooks \'emacs-startup-hook)',
        '--eval',
-       '(progn (org-agenda nil "B") (org-agenda-write "~/agendas/work/todos.txt") (spacemacs/kill-emacs))',
+       "(progn (org-agenda nil \"B\") (org-agenda-write \"#{agenda_directory}#{agenda_name}\") (spacemacs/kill-emacs))",
        :out => :close,
        :err => :close
 
-agenda_file = File.open("#{agenda_directory}todos.txt")
+agenda_file = File.open("#{agenda_directory}#{agenda_name}")
 
 lines = IO.readlines(agenda_file)
 
 puts "Do: #{lines.length}"
-puts "---"
+puts '---'
 
 # remove empty line
 lines.reject! { |s| s.nil? || s.strip.empty? }
