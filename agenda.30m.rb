@@ -2,21 +2,34 @@
 # coding: utf-8
 
 # <bitbar.title>Agenda</bitbar.title>
-# <bitbar.version>v0.1</bitbar.version>
+# <bitbar.version>v1.0</bitbar.version>
 # <bitbar.author>yqrashawn</bitbar.author>
 # <bitbar.author.github>yqrashawn</bitbar.author.github>
 # <bitbar.desc>display emacs org-agenda in bitbar</bitbar.desc>
 # <bitbar.image> http://yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin/2017-11-25_bitbar-ext-org-agenda - scaled width 500.png</bitbar.image>
 # <bitbar.dependencies>ruby</bitbar.dependencies>
+# <bitbar.abouturl>http://yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin/</bitbar.abouturl>
+
+# for more information please checkout http://yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin/
+# it's on github https://github.com/yqrashawn/bitbar-plugin-agenda
 
 require 'open3'
 
 Encoding.default_external = Encoding::UTF_8
 Encoding.default_internal = Encoding::UTF_8
 
-# Change to your todo directory path
-agenda_directory = "#{Dir.home}/agendas/work/"
+# your exported agenda files directory path eg. "#{Dir.home}/agendas/work/"
+agenda_directory = "your agenda directory"
+
+# the exported txt agenda file that in the agenda_directory eg. 'todos.txt'
 agenda_name = 'todos.txt'
+
+# the agenda custome command which brings the agenda view that you want to export
+agenda_custome_command = 'B'
+
+# function to REALLY kill emacs
+# for spacemacs use (spacemacs/kill-emacs)
+kill_emacs_function = '(let (kill-emacs-hook) (kill-emacs))'
 
 # Change priority color here
 tag_color = 'orange'
@@ -38,7 +51,7 @@ system '/usr/local/bin/emacs',
        '--eval',
        '(run-hooks \'emacs-startup-hook)',
        '--eval',
-       "(progn (org-agenda nil \"B\") (org-agenda-write \"#{agenda_directory}#{agenda_name}\") (spacemacs/kill-emacs))",
+       "(progn (org-agenda nil \"#{agenda_custome_command}\") (org-agenda-write \"#{agenda_directory}#{agenda_name}\") #{kill_emacs_function})",
        :out => :close,
        :err => :close
 
@@ -78,4 +91,3 @@ lines.each.with_index do |line, i|
 end
 
 puts lines
-# :(:?[a-z]+:?)*:$
