@@ -59,9 +59,6 @@ agenda_file = File.open("#{agenda_directory}#{agenda_name}")
 
 lines = IO.readlines(agenda_file)
 
-puts "Do: #{lines.length}"
-puts '---'
-
 # remove empty line
 lines.reject! { |s| s.nil? || s.strip.empty? }
 lines.reject! { |s| s.include?('=====') }
@@ -90,4 +87,6 @@ lines.each.with_index do |line, i|
   end
 end
 
+puts "Do: #{lines.length}"
+puts '---'
 puts lines
