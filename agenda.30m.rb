@@ -6,8 +6,8 @@
 # <bitbar.author>yqrashawn</bitbar.author>
 # <bitbar.author.github>yqrashawn</bitbar.author.github>
 # <bitbar.desc>display emacs org-agenda in bitbar</bitbar.desc>
-# <bitbar.image>https://github.com/yqrashawn/bitbar-plugin-agenda/blob/master/bitbar-ext-org-agenda.png</bitbar.image>
-# <bitbar.dependencies>ruby</bitbar.dependencies>
+# <bitbar.image>https://github.com/yqrashawn/bitbar-plugin-agenda/raw/master/bitbar-ext-org-agenda.png</bitbar.image>
+# <bitbar.dependencies>ruby,emacs</bitbar.dependencies>
 # <bitbar.abouturl>http://yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin/</bitbar.abouturl>
 
 # for more information please checkout http://yqrashawn.com/2017/11/25/org-agenda-bitbar-plugin/
